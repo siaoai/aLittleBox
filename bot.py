@@ -11,4 +11,4 @@ bot = commands.Bot(command_prefix='[')
 async def on_ready():
     print(">> BOT is online <<")
 
-bot.run(jdata['TOKEN'])
+bot.run("jdata['TOKEN']")
