@@ -1,7 +1,8 @@
 global.Discord = require("discord.js");
 global.client = new Discord.Client();
-global.config = require("config.json");
-global.servers = require('servers.json')
+global.config = require("./config.json");
+global.package = require("./package.json");
+global.servers = require('./servers.json')
 const express = require('express');
 global.set = new Set();
 // User Config
