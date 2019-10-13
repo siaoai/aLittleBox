@@ -15,6 +15,24 @@ global.premcolor = config.premcolor;
 
 global.author = package.author;
 
+//initial start funtion
+client.on("ready", () => {
+  var statuss = [`${client.users.size} Users | ${config.prefix}help`, `${client.guilds.size} Servers | ${config.prefix}help`]
+  setInterval(function start() {
+    log(`(${client.user.username} Bot): ${colors.green(`Online.`)}`);
+    
+        var rand = statuss[Math.floor(Math.random() * statuss.length)];
+        global.activity = `${client.guilds.size} Servers | ${config.prefix}help`;     
+	      client.user.setActivity(`${rand}`, { type: "WATCHING" });
+        /* client.user.setActivity(`Under Maintenance`, { type: "WATCHING"}); */
+        /* client.user.setActivity(`${client.guilds.size} Servers | ${config.prefix}help `, { type: "WATCHING"}); */
+    
+    client.user.setStatus('online');
+
+    return start;
+  }(), 180000);
+  // 180000 = 3 mins i think
+});
   // FiveM Bot API -> cdn:1234/api (HTTP)
   setInterval(function start() {
     let totalSeconds = (client.uptime / 1000);
